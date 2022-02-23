@@ -1755,6 +1755,7 @@ const answers = [
   'rainy',
   'guess',
   'didst',
+  'maiar',
 ]
 
 export const allWords = [...answers]
