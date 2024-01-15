@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:digitaltolkien/vue-wordle.git master:gh-pages
+git push -f git@github.com:digitaltolkien/vue-wordle.git main:gh-pages
 
 cd -
