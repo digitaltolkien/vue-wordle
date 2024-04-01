@@ -177,6 +177,7 @@ function genResultGrid() {
       {{ message }}
       <pre v-if="grid">{{ grid }}</pre>
       Lordle of the Rings #{{ dayNumber }}
+      Click <a :href="`https://glossary.digitaltolkien.com/${answer}`">here</a> to look up the word in the glossary.
     </div>
   </Transition>
   <header>
