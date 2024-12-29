@@ -26,6 +26,7 @@ const currentRow = $computed(() => board[currentRowIndex])
 // Feedback state: message and shake
 let message = $ref('')
 let grid = $ref('')
+let copytext = $ref('')
 let shakeRowIndex = $ref(-1)
 
 // Keep track of revealed letters for the virtual keyboard
@@ -113,6 +114,9 @@ function completeRow() {
       // yay!
       setTimeout(() => {
         grid = genResultGrid()
+        copytext = ['Praiseworthy', 'Excellent', 'Brilliant', 'Marvelous', 'Stupendous', 'Phew'][currentRowIndex] + "\n"
+        copytext += grid + "\n"
+        copytext += "Lordle of the Rings #" + dayNumber
         showMessage(
           ['Praiseworthy', 'Excellent', 'Brilliant', 'Marvelous', 'Stupendous', 'Phew'][
             currentRowIndex
@@ -128,6 +132,9 @@ function completeRow() {
       }, 1600)
     } else {
       // game over :(
+      grid = genResultGrid()
+      copytext = grid + "\n"
+      copytext += "Lordle of the Rings #" + dayNumber
       setTimeout(() => {
         showMessage(answer.toUpperCase(), -1)
       }, 1600)
@@ -169,6 +176,10 @@ function genResultGrid() {
     })
     .join('\n')
 }
+
+function copy() {
+  window.navigator.clipboard.writeText(copytext);
+}
 </script>
 
 <template>
@@ -177,6 +188,7 @@ function genResultGrid() {
       {{ message }}
       <pre v-if="grid">{{ grid }}</pre>
       Lordle of the Rings #{{ dayNumber }}
+      <pre v-if="copytext"><a @click="copy">Copy to clipboard</a></pre>
     </div>
   </Transition>
   <header>
