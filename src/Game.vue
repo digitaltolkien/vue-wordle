@@ -116,7 +116,7 @@ function completeRow() {
         grid = genResultGrid()
         copytext = ['Praiseworthy', 'Excellent', 'Brilliant', 'Marvelous', 'Stupendous', 'Phew'][currentRowIndex] + "\n"
         copytext += grid + "\n"
-        copytext += "Lordle of the Rings #" + dayNumber + "\n"
+        copytext += "Lordle of the Rings #" + dayNumber
         showMessage(
           ['Praiseworthy', 'Excellent', 'Brilliant', 'Marvelous', 'Stupendous', 'Phew'][
             currentRowIndex
@@ -134,7 +134,7 @@ function completeRow() {
       // game over :(
       grid = genResultGrid()
       copytext = grid + "\n"
-      copytext += "Lordle of the Rings #" + dayNumber + "\n"
+      copytext += "Lordle of the Rings #" + dayNumber
       setTimeout(() => {
         showMessage(answer.toUpperCase(), -1)
       }, 1600)
