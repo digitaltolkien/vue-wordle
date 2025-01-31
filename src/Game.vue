@@ -188,7 +188,7 @@ function copy() {
       {{ message }}
       <pre v-if="grid">{{ grid }}</pre>
       Lordle of the Rings #{{ dayNumber }}
-      <pre v-if="copytext"><a @click="copy">Copy to clipboard</a></pre>
+      <pre v-if="copytext"><a style="cursor:pointer;" @click="copy">Copy to clipboard</a></pre>
     </div>
   </Transition>
   <header>
